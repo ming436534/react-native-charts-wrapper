@@ -112,7 +112,7 @@ class StackedBarChartScreen extends React.Component {
             data={this.state.data}
             legend={this.state.legend}
             drawValueAboveBar={false}
-            onSelect={this.handleSelect.bind(this)}
+            onChartSelect={this.handleSelect.bind(this)}
             onChange={(event) => console.log(event.nativeEvent)}
             highlights={this.state.highlights}
             marker={this.state.marker}

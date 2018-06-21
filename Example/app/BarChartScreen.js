@@ -1,18 +1,17 @@
-import React from 'react';
+import React from 'react'
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View,
   processColor
-} from 'react-native';
+} from 'react-native'
 
-import {BarChart} from 'react-native-charts-wrapper';
+import {BarChart} from 'react-native-charts-wrapper'
 
 class BarChartScreen extends React.Component {
-
-  constructor() {
-    super();
+  constructor () {
+    super()
 
     this.state = {
       legend: {
@@ -35,20 +34,20 @@ class BarChartScreen extends React.Component {
             barSpacePercent: 40,
             barShadowColor: processColor('lightgrey'),
             highlightAlpha: 90,
-            highlightColor: processColor('red'),
+            highlightColor: processColor('red')
           }
-        }],
+        }]
       },
       highlights: [{x: 3}, {x: 6}],
       xAxis: {
         valueFormatter: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
         granularityEnabled: true,
-        granularity : 1,
+        granularity: 1
       }
-    };
+    }
   }
 
-  handleSelect(event) {
+  handleSelect (event) {
     let entry = event.nativeEvent
     if (entry == null) {
       this.setState({...this.state, selectedEntry: null})
@@ -59,16 +58,14 @@ class BarChartScreen extends React.Component {
     console.log(event.nativeEvent)
   }
 
-
-  render() {
+  render () {
     return (
       <View style={{flex: 1}}>
 
-        <View style={{height:80}}>
+        <View style={{height: 80}}>
           <Text> selected entry</Text>
           <Text> {this.state.selectedEntry}</Text>
         </View>
-
 
         <View style={styles.container}>
           <BarChart
@@ -79,15 +76,15 @@ class BarChartScreen extends React.Component {
             legend={this.state.legend}
             gridBackgroundColor={processColor('#ffffff')}
             drawBarShadow={false}
-            drawValueAboveBar={true}
-            drawHighlightArrow={true}
-            onSelect={this.handleSelect.bind(this)}
+            drawValueAboveBar
+            drawHighlightArrow
+            onChartSelect={this.handleSelect.bind(this)}
             highlights={this.state.highlights}
             onChange={(event) => console.log(event.nativeEvent)}
           />
         </View>
       </View>
-    );
+    )
   }
 }
 
@@ -99,6 +96,6 @@ const styles = StyleSheet.create({
   chart: {
     flex: 1
   }
-});
+})
 
-export default BarChartScreen;
+export default BarChartScreen

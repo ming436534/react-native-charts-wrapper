@@ -94,7 +94,7 @@ class PieChartScreen extends React.Component {
             transparentCircleRadius={45}
             transparentCircleColor={processColor('#f0f0f088')}
             maxAngle={350}
-            onSelect={this.handleSelect.bind(this)}
+            onChartSelect={this.handleSelect.bind(this)}
             onChange={(event) => console.log(event.nativeEvent)}
           />
         </View>

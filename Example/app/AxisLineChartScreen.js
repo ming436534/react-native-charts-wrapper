@@ -120,7 +120,7 @@ class AxisLineChartScreen extends React.Component {
             xAxis={this.state.xAxis}
             yAxis={this.state.yAxis}
             legend={{enabled: false}}
-            onSelect={this.handleSelect.bind(this)}
+            onChartSelect={this.handleSelect.bind(this)}
             onChange={(event) => console.log(event.nativeEvent)}
           />
         </View>

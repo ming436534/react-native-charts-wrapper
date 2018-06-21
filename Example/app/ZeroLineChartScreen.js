@@ -76,7 +76,7 @@ class ZeroLineChartScreen extends React.Component {
             yAxis={this.state.yAxis}
             chartDescription={{text: ''}}
             legend={{enabled: false}}
-            onSelect={this.handleSelect.bind(this)}
+            onChartSelect={this.handleSelect.bind(this)}
             onChange={(event) => console.log(event.nativeEvent)}
           />
         </View>

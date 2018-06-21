@@ -105,7 +105,7 @@ class RadarChartScreen extends React.Component {
             legend={this.state.legend}
             drawWeb={true}
             skipWebLineCount={1}
-            onSelect={this.handleSelect.bind(this)}
+            onChartSelect={this.handleSelect.bind(this)}
             onChange={(event) => console.log(event.nativeEvent)}
           />
         </View>

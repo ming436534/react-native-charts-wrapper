@@ -181,7 +181,7 @@ class CandleStickChartScreen extends React.Component {
             autoScaleMinMaxEnabled={true}
             // zoom={{scaleX: 2, scaleY: 1, xValue:  400000, yValue: 1}}
             zoom={{scaleX: 15.41, scaleY: 1, xValue:  40, yValue: 916, axisDependency: 'LEFT'}}
-            onSelect={this.handleSelect.bind(this)}
+            onChartSelect={this.handleSelect.bind(this)}
             ref="chart"
             onChange={(event) => console.log(event.nativeEvent)}
           />

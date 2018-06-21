@@ -232,7 +232,7 @@ export default class Combined extends Component {
           <CombinedChart
             data={this.state.data}
             xAxis={this.state.xAxis}
-            onSelect={this.handleSelect.bind(this)}
+            onChartSelect={this.handleSelect.bind(this)}
             onChange={(event) => console.log(event.nativeEvent)}
             marker={this.state.marker}
             highlights={this.state.highlights}
