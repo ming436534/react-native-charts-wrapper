@@ -8,7 +8,7 @@ import {
   Text,
 } from 'react-native';
 
-import {StackNavigator, SafeAreaView} from 'react-navigation';
+import {createStackNavigator, createAppContainer, SafeAreaView} from 'react-navigation';
 
 import AxisLineChartScreen from './AxisLineChartScreen';
 import MultipleChartScreen from './MultipleChartScreen';
@@ -28,6 +28,9 @@ import StackedBarChartScreen from './StackedBarChartScreen';
 import ZeroLineChartScreen from './ZeroLineChartScreen';
 import LiveUpdateChartScreen from './LiveUpdateChartScreen';
 import GroupBarChartScreen from './GroupBarChartScreen';
+import InfiniteScrollLineChartScreen from './InfiniteScrollLineChartScreen';
+import LinkageChartScreen from './LinkageChartScreen';
+import StockChartScreen from './StockChartScreen';
 
 
 const styles = StyleSheet.create({
@@ -102,6 +105,11 @@ var ExampleRoutes = {
     screen: CandleStickChartScreen,
     description: 'Displays a CandleStickChart',
   },
+  StockChartScreen: {
+    name: 'StockChartScreen',
+    screen: StockChartScreen,
+    description: 'Displays a StockChartScreen',
+  },
   TimeSeriesLineChartScreen: {
     name: 'TimeSeriesLineChart',
     screen: TimeSeriesLineChartScreen,
@@ -147,6 +155,16 @@ var ExampleRoutes = {
     screen: MovingWindowChartScreen,
     description: 'Displays a MovingWindowChartScreen',
   },
+  InfiniteScrollLineChartScreen: {
+    name: 'InfiniteScrollLineChartScreen',
+    screen: InfiniteScrollLineChartScreen,
+    description: 'Displays a InfiniteScrollChartScreen',
+  },
+  LinkageChartScreen: {
+    name: 'LinkageChartScreen',
+    screen: LinkageChartScreen,
+    description: 'Displays a LinkageChartScreen',
+  },
 };
 
 const MainScreen = ({navigation}) => (
@@ -182,7 +200,7 @@ MainScreen.navigationOptions = {
   title: 'Home',
 };
 
-const ChartsExplorer = StackNavigator(
+const ChartsExplorer = createStackNavigator(
   {
     Index: {
       screen: MainScreen,
@@ -203,4 +221,4 @@ const ChartsExplorer = StackNavigator(
   },
 );
 
-export default ChartsExplorer;
+export default createAppContainer(ChartsExplorer);
